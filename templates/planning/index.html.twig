@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Planning
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row mt-5">
+			<iframe src="{{ asset('planning/' ~ app.user.NumIntervenant ~ '/' ~ app.user.NumIntervenant ~ '.pdf#zoom=FitH')}}" class="iframePlanning"></iframe>
+		</div>
+	</div>
+{% endblock %}

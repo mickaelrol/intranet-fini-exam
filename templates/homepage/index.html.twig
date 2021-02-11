@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Intranet A2Mains
+{% endblock %}
+
+{% block body %}
+	{% if app.user %}
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-4 mt-5">
+					<div class="card shadow-lg bgInfos">
+						<div class="d-flex justify-content-center m-4">
+							<a href="{{ path('news') }}">
+								<i class="fas fa-info-circle fa-10x text-align-center icone-col"></i>
+							</a>
+						</div>
+						<div class="card-body">
+							<p class="card-text text-center textSizeCustom pb-4">Infos A2mains</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mt-5">
+					<div class="card shadow-lg bgPlanning">
+						<div class="d-flex justify-content-center m-4">
+							<a href="{{ path('planning') }}">
+								<i class="fas fa-file-alt fa-10x text-align-center icone-col"></i>
+							</a>
+						</div>
+						<div class="card-body">
+							<p class="card-text text-center textSizeCustom pb-4">Mon Planning</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mt-5">
+					<div class="card shadow-lg bgDoc">
+						<div class="d-flex justify-content-center m-4">
+							<a href="{{ path('mes_documents') }}">
+								<i class="fas fa-user fa-10x text-align-center icone-col"></i>
+							</a>
+						</div>
+						<div class="card-body">
+							<p class="card-text text-center textSizeCustom pb-4">Mes documents</p>
+						</div>
+					</div>
+				</div>
+				{# Partie réservé au admin #}
+				{% if is_granted('ROLE_ADMIN') %}
+					<div class="col-12 col-md-6 col-lg-4 mt-5">
+						<div class="card shadow-lg bgEdit">
+							<div class="d-flex justify-content-center m-4">
+								<a href="{{ path('add_new')}}">
+									<i class="far fa-edit fa-10x text-align-center icone-col"></i>
+								</a>
+							</div>
+							<div class="card-body">
+								<p class="card-text text-center textSizeCustom pb-4">Nouvelle info</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4 mt-5">
+						<div class="card shadow-lg bgPCreateUser">
+							<div class="d-flex justify-content-center m-4">
+								<a href="{{ path("user_create") }}">
+									<i class="fas fa-user-plus fa-10x text-align-center icone-col"></i>
+								</a>
+							</div>
+							<div class="card-body">
+								<p class="card-text text-center textSizeCustom pb-4">Créer un salarié</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4 mt-5">
+						<div class="card shadow-lg bgUtilisateurs">
+							<div class="d-flex justify-content-center m-4">
+								<a href="{{ path("utilisateurs") }}">
+									<i class="fas fa-clipboard-list fa-10x text-align-center icone-col"></i>
+								</a>
+							</div>
+							<div class="card-body">
+								<p class="card-text text-center textSizeCustom pb-4">Liste des salariés</p>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+
+		{# SEO #}
+		<meta name="description" content="Intranet A2mains Service à domicile 17">
+		<meta
+		name="author" content="Mickael Rolgen">
+
+		{# OG Meta Tags #}
+		<meta property="og:title" content="Intranet A2mains">
+		<meta property="og:description" content="Intranet A2mains Service à domicile 17">
+		<meta property="og:site_name" content="Intranet A2mains">
+		<meta
+		property="og:locale" content="fr_FR">
+
+		{# Favicon #}
+		<link
+		rel="shortcut icon" type="image/jpg" href="{{ asset('images/LogoA2Mains.jpg')}}"/>
+
+		{# Font Awesome #}
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+		{# Bootswatch lumen #}
+		<link
+		rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+
+		{# CSS #}
+		<link href="{{ asset('css/style.css')}}" rel="stylesheet"> {% block stylesheets %}{% endblock %}
+		</head>
+		<body>
+			<header>
+				{% if app.user %}
+					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+						<img src="{{ asset('images/A2mains-navbar.jpg')}}" alt="LogoA2mainsNavBar">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarColor03">
+							<ul class="navbar-nav mr-auto mt-5 w-100">
+								<li class="nav-item">
+									<a class="nav-link active lienNavbar" aria-current="page" href="{{ path('homepage') }}">Accueil</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link active lienNavbar" aria-current="page" href="{{ path('news') }}">Actualités</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link active lienNavbar" aria-current="page" href="{{ path('planning') }}">Planning</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link active lienNavbar" aria-current="page" href="{{ path('mes_documents') }}">Mes documents</a>
+								</li>
+								<li class="nav-item ml-auto position-relative">
+									<a href="{{ path("app_logout") }}" class="btn btn-danger btnDc">Deconnexion</a>
+								</li>
+							</ul>
+
+						</div>
+					</nav>
+				{% else %}
+					<ul class="navbar-nav m-3 p-3">
+						<li class="nav-item">
+							<a href="{{ path("app_login") }}" class="btn btn-success connexionBtn">Connexion</a>
+						</li>
+					</ul>
+				{% endif %}
+			</header>
+			<main>
+				{% block body %}{% endblock %}
+			</main>
+
+			<footer class="my-5 pt-5 text-muted text-center text-small">
+				<p class="mb-1">A2mains, tous droits reservés
+				</p>
+				<ul class="list-inline">
+					<li class="list-inline-item">
+						<a href="{{ path('aide') }}">Besoin d'aide ?</a>
+					</li>
+				</ul>
+			</footer>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+			<script src="{{asset('js/script.js')}}"></script>
+			{% block javascripts %}{% endblock %}
+		</body>
+	</html>

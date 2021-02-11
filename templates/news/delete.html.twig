@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('news_delete', {'id': new.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cet new ?')">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ new.id) }}">
+	<button class="btn">
+		<i class="fas fa-trash-alt fa-2x trashIcon"></i>
+	</button>
+</form>

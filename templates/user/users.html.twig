@@ -1,0 +1,75 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste des utilisateurs
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+	<div class="row d-flex justify-content-end mt-5">
+		<div class="col-5 formSearch">
+			{{ form_start(form) }}
+			{{ form_errors(form) }}
+			{{ form_row(form.mots) }}
+			<button type="submit" class="btn btn-primary float-right">
+				<i class="fas fa-search"></i>
+				Rechercher
+			</button>
+			{{ form_end(form) }}
+		</div></div>
+
+
+		<h1 class="text-center my-5">Liste des utilisateurs</h1>
+		<table class="table shadow-lg">
+			<thead class='thead-dark'>
+				<tr>
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>Email</th>
+					<th>Numéro d'intervenant</th>
+					<th>N° de Portable</th>
+					<th>N° de Fixe</th>
+					<th>Type de Contrat</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{# On boucle sur les utilisateurs #}
+				{% for user in users %}
+					<tr>
+						<td>
+							{{ user.Nom }}</td>
+						<td>
+							{{ user.Prenom }}</td>
+						<td>
+							{{ user.email }}</td>
+						<td>
+							{{ user.NumIntervenant }}</td>
+						<td>
+							{{ user.Portable }}</td>
+						<td>
+							{{ user.Fixe }}</td>
+
+						<td>
+							{{ user.TypeDuContrat}}
+						</td>
+						<td>
+							<a href="/modify/user/{{ user.id }}">
+								<i class="fas fa-user-edit fa-2x modifyIcon"></i>
+							</a>
+						</td>
+						<td>
+							{{ include('user/delete.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr scope="row">
+						<td colspan="9">
+							Votre recherche ne correspond à aucunes données
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

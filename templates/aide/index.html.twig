@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Besoin d'aide ?
+{% endblock %}
+{% block body %}
+	<link rel="stylesheet" href="{{ asset('css/accordeon.css')}}">
+	<h1 class='text-center mt-5'>Vous avez besoin d'aide ?</h1>
+	<div class="accordeon">
+
+		<div class="card">
+			<div class="card-header text-center">
+				<h2>Vous avez oubliez votre Mot de Passe ?
+
+				</h2>
+				<span class="fa fa-minus active"></span>
+			</div>
+			<div class="card-body text-center mt-2">
+				<p>Contactez votre responsable de secteur afin qu'il/elle vous communique votre mot de passe.</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header text-center">
+				<h2>Vous souhaitez changer d'adresse e-mail ?
+
+				</h2>
+				<span class="fa fa-plus"></span>
+			</div>
+			<div class="card-body text-center mt-2">
+				<p>Contactez votre responsable de secteur afin qu'il/elle effectue votre changement d'e-mail</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header text-center">
+				<h2>Vous n'arrivez pas à vous connecter ?
+
+				</h2>
+				<span class="fa fa-plus"></span>
+			</div>
+			<div class="card-body text-center mt-2">
+				<p>Contactez A2mains afin de communiquer sur le bug rencontrer et y remédier au plus vite</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header text-center">
+				<h2>Vous souhaitez changer de mot de passe ?
+
+				</h2>
+				<span class="fa fa-plus"></span>
+			</div>
+			<div class="card-body text-center mt-2">
+				<p>Contactez A2mains afin d'effectuer le changement de mot de passe.</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

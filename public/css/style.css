@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+
+/* Icone Homepage */
+.textSizeCustom{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.icone-col{
+    color: black;
+}
+.icone-col:hover{
+    text-shadow: 0.15rem 0.15rem white;
+}
+.bgInfos{
+    background-color:dodgerblue;
+}
+.bgPlanning{
+    background-color:orange;
+}
+.bgDoc{
+    background-color:greenyellow;
+}
+.bgEdit{
+    background-color:pink;
+}
+.bgUtilisateurs{
+    background-color: rebeccapurple;
+}
+.bgPCreateUser{
+    background-color: grey;
+}
+
+
+
+/* icone modif / delete  */
+.trashIcon{
+    color: #ff6873;
+    padding: 3px;
+}
+
+.trashIcon:hover{
+    color: red;
+    
+}
+
+.modifyIcon{
+    color: rgba(17, 173, 17, 0.644);
+}
+
+.modifyIcon:hover{
+    color: green;
+}
+
+
+
+/* Tableau users */
+body > main > div > table > tbody > tr > td , body > main > div > table > thead > tr > th{
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+/* boutton connexion */
+.connexionBtn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+
+
+
+/* Navbar */
+.btn{
+    font-style: normal !important;
+    text-decoration: none;
+}
+.btn:hover{ 
+    text-decoration: underline;
+}
+.navbar-brand{
+    font-size: 2rem;
+}
+
+ul.navbar-nav> li > a{
+    font-style: italic;
+    font-size: 1.1rem;
+}
+ul.navbar-nav> li > a:hover{
+    text-decoration: underline ;
+    font-weight: bold;
+}
+.btnDc{
+    position: absolute;
+    top: -50px;
+    right: 0px;
+}
+
+
+
+/* Image A2mains page news */
+.imageHidden{
+    display: none !important;
+}
+
+.titreNews{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.gotopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: black;
+    border-radius: 100%;
+    bottom: 40px;
+    right: 50px;
+    display: none;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color:white;
+    font-size: 22px;
+}
+
+.gotopbtn:hover{
+   background-color: lightgray;
+}
+
+
+/* Iframe Planning */
+.iframePlanning{
+    width: 100%;
+    height: 800px;
+}
+
+
+/* Media query */
+@media screen and (min-width:768px){
+    .imageHidden{
+        display: block !important;
+    }
+
+    .LogoA2mainsNew{
+        max-width: 20vw;
+    }
+
+    body > div.container > div > div > div.col-5.imageHidden > img{
+    width: 20vw;
+    }
+}
+
+/* Media query collapse navbar */
+@media screen and (min-width:990px){
+    .btnDc{
+        top: -25px;
+    }
+}

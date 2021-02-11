@@ -1,0 +1,56 @@
+/* Accordeon page Aide */
+.accordeon{
+    max-width: 60vw;
+    display: block;
+    margin: 100px auto;
+}
+
+.accordeon .card{
+    box-shadow: 0px 0px 20px #d4d4d4;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.accordeon .card .card-header h2{
+    cursor: pointer;
+    color: #ffffff;
+    position: relative;
+    margin: 0;
+    padding: 15px 20px;
+}
+
+.accordeon .card .card-header{
+    position: relative;
+    background-color: #3343a2;
+}
+
+.accordeon .card .card-header span{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    height: 25px;
+    width: 25px;
+    color:#3343a2 ;
+    background-color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+}
+
+.accordeon .card .card-body{
+    padding: 20px;
+    display: none;
+}
+
+/* Ouverture de la premiere card par defaut */
+.accordeon .card:nth-child(1) .card-body{
+    display: block;
+}
+
+.accordeon .card .card-body span{
+    font-size: 15px;
+    line-height: 24px;
+    color: #444444;
+    margin: 0px;
+}
